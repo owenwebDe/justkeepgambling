@@ -1,0 +1,251 @@
+/* Prevent body scroll when mobile menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001;
+  width: 30px;
+  height: 25px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #FFC827;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Tablet and Mobile Styles */
+@media (max-width: 991px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  header .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--primary);
+    flex-direction: column;
+    padding: 80px 20px 20px;
+    transition: right 0.3s ease;
+    z-index: 999;
+    overflow-y: auto;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+  }
+
+  header .menu.active {
+    right: 0;
+  }
+
+  header .menu li {
+    width: 100%;
+    margin-bottom: 10px !important;
+  }
+
+  header .menu li a {
+    display: block;
+    padding: 12px 15px;
+    width: 100%;
+    text-align: left;
+  }
+
+  header .menu li a.buy-link {
+    background: var(--secondary);
+    color: var(--primary);
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 10px !important;
+  }
+
+  .logo h2 {
+    font-size: 22px !important;
+  }
+
+  .logo h2 span:last-child {
+    font-size: 20px !important;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .logo h2 {
+    font-size: 18px !important;
+  }
+
+  .logo h2 span:last-child {
+    font-size: 16px !important;
+  }
+
+  /* Mobile Banner Improvements */
+  .banner-wrapper {
+    justify-content: center !important;
+    text-align: center;
+  }
+
+  .banner-content {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .banner-title {
+    font-size: 36px !important;
+    line-height: 1.2 !important;
+  }
+
+  .banner-subtitle {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+  }
+
+  .button-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .button-wrapper .cmn-btn {
+    width: 100%;
+    padding: 15px 20px !important;
+    font-size: 16px !important;
+    text-align: center;
+    display: block;
+  }
+
+  .banner-thumbnail {
+    display: none;
+  }
+
+  .padding-130 {
+    padding: 60px 0 !important;
+  }
+
+  .sec-head-title {
+    font-size: 28px !important;
+  }
+
+  .game-item,
+  .why-item,
+  .how-item {
+    margin-bottom: 20px;
+  }
+
+  .roadmap-phase h3 {
+    font-size: 20px !important;
+  }
+
+  .roadmap-phase {
+    margin-bottom: 30px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links li {
+    margin: 0 !important;
+  }
+
+  /* Chart and Swap sections on mobile */
+  #dexscreener-embed {
+    padding-bottom: 140% !important;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 575px) {
+  .logo h2 {
+    font-size: 16px !important;
+  }
+
+  .logo h2 span:last-child {
+    font-size: 14px !important;
+  }
+
+  .banner-title {
+    font-size: 32px !important;
+  }
+
+  .banner-subtitle {
+    font-size: 15px !important;
+  }
+
+  .sec-head-title {
+    font-size: 24px !important;
+  }
+
+  .cmn-btn {
+    font-size: 15px !important;
+    padding: 14px 20px !important;
+  }
+
+  .button-wrapper {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .button-wrapper .cmn-btn {
+    width: 100%;
+  }
+
+  header {
+    padding: 15px 10px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .roadmap-phase {
+    padding: 20px !important;
+  }
+
+  .roadmap-phase h3 {
+    font-size: 18px !important;
+  }
+
+  .roadmap-phase ul li {
+    font-size: 14px;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 375px) {
+  .logo h2 {
+    font-size: 14px !important;
+  }
+
+  .logo h2 span:last-child {
+    font-size: 13px !important;
+  }
+
+  header .menu {
+    width: 100%;
+    right: -100%;
+  }
+}

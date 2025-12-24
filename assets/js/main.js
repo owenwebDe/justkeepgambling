@@ -33,6 +33,29 @@ $(document).ready(function(){
           $("header").removeClass("sticky");
       }
   });
+
+  // Mobile Menu Toggle
+  $('.mobile-menu-toggle').on('click', function(){
+    $(this).toggleClass('active');
+    $('.menu').toggleClass('active');
+    $('body').toggleClass('menu-open');
+  });
+
+  // Close menu when clicking on a link
+  $('.menu li a').on('click', function(){
+    $('.mobile-menu-toggle').removeClass('active');
+    $('.menu').removeClass('active');
+    $('body').removeClass('menu-open');
+  });
+
+  // Close menu when clicking outside
+  $(document).on('click', function(e){
+    if(!$(e.target).closest('header').length) {
+      $('.mobile-menu-toggle').removeClass('active');
+      $('.menu').removeClass('active');
+      $('body').removeClass('menu-open');
+    }
+  });
 });
 
 
